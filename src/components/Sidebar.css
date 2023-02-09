@@ -1,7 +1,10 @@
 .sidebar-bg {
-  background-color: blue;
   height: 100vh;
   width: 70px;
+  background-color: #0d28a6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .sidebar-container {
   display: flex;
@@ -10,4 +13,46 @@
   gap: 30px;
   padding: 18px;
   width: 70px;
+  justify-content: center;
+}
+.logo-bg {
+  width: 34px;
+  height: 34px;
+  background-color: #cfd4ed;
+  margin-top: 18px;
+}
+.icon {
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.profile-container {
+  display: flex;
+  margin-left: 24px;
+}
+.profile-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: #cfd4ed;
+}
+.profile-logo p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #151515;
+}
+.name-logo {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  margin-right: 24px;
 }

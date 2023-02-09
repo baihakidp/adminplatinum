@@ -5,9 +5,7 @@ import Layoutwrapper from "../components/Layoutwrapper";
 const Dashboard = () => {
   return (
     <Layoutwrapper>
-      <div>
-        <CarList />
-      </div>
+      <CarList />
     </Layoutwrapper>
   );
 };
