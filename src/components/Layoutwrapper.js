@@ -9,11 +9,11 @@ const Layoutwrapper = ({ children }) => {
     <>
       <div className="layoutwrapper-bg">
         <SideBar />
-        <Dashboard />
         <div>
           <Navbar />
-          {children}
+          <Dashboard />
         </div>
+        {children}
       </div>
     </>
   );

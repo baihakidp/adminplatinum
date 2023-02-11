@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <div className="navbar-left">
           <div className="logo-background"></div>
-          <div>
+          <div className>
             <FiMenu size={24} />
           </div>
         </div>

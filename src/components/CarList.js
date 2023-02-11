@@ -1,6 +1,7 @@
 import { Button } from "antd";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { FiChevronRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import "./CarList.css";
 
@@ -127,7 +128,18 @@ const CarList = () => {
       .catch((err) => console.log(err.message));
   };
   return (
-    <div>
+    <div className="cars-container-bg">
+      <div className="cars-breadcrumbs">
+        <div>
+          <p>Cars</p>
+        </div>
+        <div>
+          <FiChevronRight />
+        </div>
+        <div>
+          <p>List Cars</p>
+        </div>
+      </div>
       <div className="cars-category-btn">
         <div>
           <button onClick={handleAllCategory}>all</button>

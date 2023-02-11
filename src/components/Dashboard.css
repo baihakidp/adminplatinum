@@ -1,5 +1,26 @@
 .dashboard-bg {
-  background-color: yellow;
+  background-color: #ffffff;
   width: 220px;
   height: 100vh;
+  margin-top: 80px;
+}
+.dashboard-container {
+  gap: 30px;
+}
+.db-p1 {
+  margin-top: 18px;
+  padding-left: 24px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+}
+
+.db-p2 {
+  width: 100%;
+  background-color: #cfd4ed;
+  margin-top: 18px;
+  padding-left: 24px;
+  height: 42px;
+  display: flex;
+  align-items: center;
 }

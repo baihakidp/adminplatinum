@@ -1,38 +1,41 @@
+import ColumnGroup from "antd/es/table/ColumnGroup";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 
 const Dashboard = () => {
-  function DashboardSide(props) {
-    if (props.dashboard === true) {
-      return (
-        <div>
-          <div>
+  const { navReducer } = useSelector((state) => state);
+
+  const isDashboard = navReducer.current === "dashboard";
+
+  if (isDashboard) {
+    return (
+      <div className="dashboard-bg">
+        <div className="dashboard-container">
+          <div className="db-p1">
             <p>DASHBOARD</p>
           </div>
-          <div>
+          <div className="db-p2">
             <p>Dashboard</p>
           </div>
         </div>
-      );
-    } else {
-      return (
-        <div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="dashboard-bg">
+        <div className="dashboard-container">
           <div>
-            <p>CARS</p>
+            <p className="db-p1">Cars</p>
           </div>
-          <div>
-            <p>ListCars</p>
+          <div className="db-p2">
+            <p>List Cars</p>
           </div>
         </div>
-      );
-    }
+      </div>
+    );
   }
-
-  return (
-    <div className="dashboard-bg">
-      <DashboardSide />
-    </div>
-  );
 };
 
 export default Dashboard;

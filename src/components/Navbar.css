@@ -72,3 +72,32 @@
   padding-left: 12px;
   padding-right: 12px;
 }
+.profile-container {
+  display: flex;
+  margin-left: 24px;
+}
+.profile-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: #cfd4ed;
+}
+.profile-logo p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #151515;
+}
+.name-logo {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  margin-right: 24px;
+}

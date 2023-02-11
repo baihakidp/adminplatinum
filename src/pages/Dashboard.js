@@ -1,11 +1,11 @@
 import React from "react";
-import CarList from "../components/CarList";
+import Chartdb from "../components/Chartdb";
 import Layoutwrapper from "../components/Layoutwrapper";
 
 const Dashboard = () => {
   return (
     <Layoutwrapper>
-      <CarList />
+      <Chartdb />
     </Layoutwrapper>
   );
 };

@@ -5,6 +5,7 @@ export const authAction = (payload) => (dispatch) => {
     .post("https://bootcamp-rent-cars.herokuapp.com/admin/auth/login", payload)
     .then((res) => {
       localStorage.setItem("token", res.data.access_token);
+      localStorage.setItem("email", res.data.email);
       dispatch({
         type: "LOGIN",
         payload: true,

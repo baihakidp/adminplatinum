@@ -22,3 +22,11 @@
   margin-left: auto;
   margin-right: auto;
 }
+.cars-breadcrumbs {
+  margin-top: 80px;
+  margin-left: 25px;
+}
+.cars-container-bg {
+  background-color: #e5e5e5;
+  width: 100%;
+}
