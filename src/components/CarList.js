@@ -1,9 +1,10 @@
 import { Button } from "antd";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { FiChevronRight } from "react-icons/fi";
+import { FiChevronRight, FiEdit, FiTrash, FiUsers } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import "./CarList.css";
+import { toRp } from "../utils/toRp";
 
 const CarList = () => {
   const [cars, setCars] = useState([]);
@@ -127,6 +128,9 @@ const CarList = () => {
       })
       .catch((err) => console.log(err.message));
   };
+  
+  
+  
   return (
     <div className="cars-container-bg">
       <div className="cars-breadcrumbs">
@@ -163,8 +167,73 @@ const CarList = () => {
                   <img src={item.image} alt="gambar" />
                 </div>
                 <h1>{item.name}</h1>
-                <h2>{item.price}</h2>
-                <p>{item.category}</p>
+                <h2>
+                  <p>Rp {toRp(item.price)} /hari</p>
+                </h2>
+                {(() => {
+                  if (item.category === "small") {
+                    return (
+                      <div className="cars-card-category">
+                        <div className="cars-card-category-icon">
+                          <FiUsers size={20} />
+                        </div>
+                        <div className="cars-card-category-desc">
+                          <p>2 - 4 orang</p>
+                        </div>
+                      </div>
+                    );
+                  } else if (item.category === "Medium") {
+                    return (
+                      <div className="cars-card-category">
+                        <div className="cars-card-category-icon">
+                          <FiUsers size={20} />
+                        </div>
+                        <div className="cars-card-category-desc">
+                          <p>4 - 6 orang</p>
+                        </div>
+                      </div>
+                    );
+                  } else if (item.category === "large") {
+                    return (
+                      <div className="cars-card-category">
+                        <div className="cars-card-category-icon">
+                          <FiUsers size={20} />
+                        </div>
+                        <div className="cars-card-category-desc">
+                          <p>6 - 8 orang</p>
+                        </div>
+                      </div>
+                    );
+                  } else {
+                    return (
+                      <div className="cars-card-category">
+                        <div className="cars-card-category-icon">
+                          <FiUsers size={20} />
+                        </div>
+                        <div className="cars-card-category-desc">
+                          <p>-</p>
+                        </div>
+                      </div>
+                    );
+                  }
+                })()}
+                <div>
+                  <p>Update at {item.updatedAt}</p>
+                </div>
+                <div>
+                  <div>
+                    <button>
+                      <FiTrash size={18} />
+                      Delete
+                    </button>
+                  </div>
+                  <div>
+                    <button>
+                      <FiEdit size={18} />
+                      Edit
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           ))}

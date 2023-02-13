@@ -1,4 +1,30 @@
 .chart-container-bg {
   background-color: #e5e5e5;
   width: 100%;
+  margin-top: 70px;
+  margin-left: 25px;
+}
+.dashboard-container-bg {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 25px;
+  margin-top: 32px;
+}
+.rented-car-bg {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 58px;
+  margin-left: 25px;
+}
+.dashboard-chart-title-icon {
+  width: 4px;
+  height: 24px;
+  background: #0d28a6;
+}
+.dashboard-chart-title p {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
 }
