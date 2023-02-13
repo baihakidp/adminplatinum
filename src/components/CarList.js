@@ -1,7 +1,12 @@
-import { Button } from "antd";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { FiChevronRight, FiEdit, FiTrash, FiUsers } from "react-icons/fi";
+import {
+  FiChevronRight,
+  FiEdit,
+  FiPlus,
+  FiTrash,
+  FiUsers,
+} from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import "./CarList.css";
 import { toRp } from "../utils/toRp";
@@ -128,37 +133,51 @@ const CarList = () => {
       })
       .catch((err) => console.log(err.message));
   };
-  
-  
-  
+
   return (
     <div className="cars-container-bg">
       <div className="cars-breadcrumbs">
         <div className="div-chevron">
-        <div className="p-Cars-breadcrumb">
-          <p>Cars</p>
-        </div>
-        <div className="chevron">
-          <FiChevronRight />
-        </div>
-        <div className="div-listcars">
-          <p className="p-listCars">List Cars</p>
-        </div>
+          <div className="p-Cars-breadcrumb">
+            <p>Cars</p>
+          </div>
+          <div className="chevron">
+            <FiChevronRight />
+          </div>
+          <div className="div-listcars">
+            <p className="p-listCars">List Cars</p>
+          </div>
         </div>
       </div>
-      <div>
-        <p className="List-p-cars">List Cars</p>
+      <div className="listcar-addcar-container">
+        <div>
+          <p className="List-p-cars">List Cars</p>
+        </div>
+        <div className="add-new-car-btn">
+          <button>
+            <FiPlus size={18} /> Add New Car
+          </button>
+        </div>
       </div>
+
       <div className="cars-category-btn">
-       <button onClick={handleAllCategory} className="button-all">all</button>
+        <button onClick={handleAllCategory} className="button-all">
+          all
+        </button>
         <div>
-          <button onClick={handleSmallCategory} className="button-small">small</button>
+          <button onClick={handleSmallCategory} className="button-small">
+            small
+          </button>
         </div>
         <div>
-          <button onClick={handleMediumCategory} className="button-small">medium</button>
+          <button onClick={handleMediumCategory} className="button-small">
+            medium
+          </button>
         </div>
         <div>
-          <button onClick={handleLargeCategory} className="button-small">large</button>
+          <button onClick={handleLargeCategory} className="button-small">
+            large
+          </button>
         </div>
       </div>
       <div className="car-container">

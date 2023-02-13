@@ -1,7 +1,5 @@
-import ColumnGroup from "antd/es/table/ColumnGroup";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./Dashboard.css";
 
 const Dashboard = () => {
