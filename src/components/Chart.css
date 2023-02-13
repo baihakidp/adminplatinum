@@ -28,3 +28,30 @@
   font-size: 14px;
   line-height: 20px;
 }
+.dasboard-month-bg {
+  margin-top: 18px;
+  margin-bottom: 45px;
+  margin-left: 25px;
+}
+.dashboard-month-title p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+.dashboard-month-select-bg {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.dashboard-month-btn button {
+  padding: 8px 12px;
+  background-color: #0d28a6;
+  color: white;
+  border: 1px solid #0d28a6;
+  border-radius: 0px 2px 2px 0px;
+  -webkit-border-radius: 0px 2px 2px 0px;
+  -moz-border-radius: 0px 2px 2px 0px;
+  -ms-border-radius: 0px 2px 2px 0px;
+  -o-border-radius: 0px 2px 2px 0px;
+}
