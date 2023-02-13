@@ -12,6 +12,7 @@
     "bootstrap": "^5.2.3",
     "chart": "^0.1.2",
     "chart.js": "^4.2.0",
+    "node-modules": "^1.0.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.1",
     "react-chartjs-2": "^5.2.0",

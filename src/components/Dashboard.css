@@ -1,8 +1,9 @@
 .dashboard-bg {
   background-color: #ffffff;
   width: 220px;
-  height: 100vh;
+  height: 90vh;
   margin-top: 80px;
+  
 }
 .dashboard-container {
   gap: 30px;

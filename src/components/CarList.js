@@ -134,28 +134,31 @@ const CarList = () => {
   return (
     <div className="cars-container-bg">
       <div className="cars-breadcrumbs">
-        <div>
+        <div className="div-chevron">
+        <div className="p-Cars-breadcrumb">
           <p>Cars</p>
         </div>
-        <div>
+        <div className="chevron">
           <FiChevronRight />
         </div>
-        <div>
-          <p>List Cars</p>
+        <div className="div-listcars">
+          <p className="p-listCars">List Cars</p>
+        </div>
         </div>
       </div>
+      <div>
+        <p className="List-p-cars">List Cars</p>
+      </div>
       <div className="cars-category-btn">
+       <button onClick={handleAllCategory} className="button-all">all</button>
         <div>
-          <button onClick={handleAllCategory}>all</button>
+          <button onClick={handleSmallCategory} className="button-small">small</button>
         </div>
         <div>
-          <button onClick={handleSmallCategory}>small</button>
+          <button onClick={handleMediumCategory} className="button-small">medium</button>
         </div>
         <div>
-          <button onClick={handleMediumCategory}>medium</button>
-        </div>
-        <div>
-          <button onClick={handleLargeCategory}>large</button>
+          <button onClick={handleLargeCategory} className="button-small">large</button>
         </div>
       </div>
       <div className="car-container">
