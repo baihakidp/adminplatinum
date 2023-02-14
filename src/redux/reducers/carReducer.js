@@ -4,6 +4,7 @@ const initialState = {
   smallCar: false,
   mediumCar: false,
   largecar: false,
+  Mydelete: '',
 };
 
 export const carReducer = (state = initialState, action) => {
@@ -33,6 +34,12 @@ export const carReducer = (state = initialState, action) => {
         ...initialState,
         largeCar: action.payload,
       };
+
+    case "Delete_Cars":
+      return {
+        ...initialState,
+        Mydelete: action.payload,
+      }
     default:
       return state;
   }

@@ -1,0 +1,96 @@
+.div-update {
+    margin-left: 90px;
+    margin-top: 80px;
+}
+
+.bread-crumb-add {
+    display: flex;
+}
+
+.Chevron-add {
+    margin-left: 10px;
+    margin-top: 14px;
+}
+
+.Cars-add {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.list-cars-add {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+}
+
+.addnewcar {
+  font-weight: 300;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+  color: #222;
+  line-height: 18px;
+}
+
+.div-Addnewcar {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.div-inputcarAdd {
+    width: 970px;
+    height: 318px;
+    background-color: whitesmoke;
+    border-radius: 2px;
+}
+
+.div-input {
+    width: 500px;
+    height: 42px;
+    margin-left: 16px;
+   padding-top: 16px;
+}
+
+.label-add {
+    font-weight: 400;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 147px;
+    height: 18px;
+    top: 9px;
+}
+
+.input-add {
+    width: 339px;
+    height: 36px;
+    border-radius: 2px;
+    margin-left: 20px;
+}
+
+.input-add1 {
+    width: 339px;
+    height: 36px;
+    border-radius: 2px;
+    margin-left: 85px;
+}
+
+.div-input-file {
+    width: 500px;
+    height: 36px;
+    margin-left: 16px;
+    padding-top: 16px;
+}
+
+.input-file {
+  margin-left: 95px;
+}
+
+.select-add {
+    margin-left: 70px;
+    width: 345px;
+    height: 36px;
+    background-color: white;
+}
