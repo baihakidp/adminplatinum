@@ -23,14 +23,14 @@ const CarList = () => {
   const [largeCategory, setLargeCategory] = useState(false);
   const navigate = useNavigate();
   const Dispatch = useDispatch();
-  const {Mydelete} = useSelector((rootReducer) => rootReducer.reduceCar)
+  const { Mydelete } = useSelector((rootReducer) => rootReducer.reduceCar);
 
   // useEffect(() => {
   //   Getcar();
   // },[])
 
   useEffect(() => {
-   Getcar()
+    Getcar();
   }, [Mydelete]);
 
   const Getcar = () => {
@@ -54,7 +54,7 @@ const CarList = () => {
         setLargeCategory(false);
       })
       .catch((err) => console.log(err.message));
-  }
+  };
 
   const handleAllCategory = () => {
     const token = localStorage.getItem("token");
@@ -151,10 +151,10 @@ const CarList = () => {
   // handle Delete
 
   const HandleDelete = (id) => {
-    Dispatch(Deletecars(id))
-  }
+    Dispatch(Deletecars(id));
+  };
 
-  console.log(Mydelete)
+  console.log(Mydelete);
   return (
     <div className="cars-container-bg">
       <div className="cars-breadcrumbs">
@@ -176,10 +176,10 @@ const CarList = () => {
         </div>
         <div>
           <Link to={"/Addcar"}>
-          <button className="add-new-car-btn">
-            <FiPlus size={18} />
-             Add New Car
-          </button>
+            <button className="add-new-car-btn">
+              <FiPlus size={18} />
+              Add New Car
+            </button>
           </Link>
         </div>
       </div>
@@ -224,7 +224,7 @@ const CarList = () => {
                           <FiUsers size={20} />
                         </div>
                         <div>
-                          <p  className="cars-card-category-desc">2 - 4 orang</p>
+                          <p className="cars-card-category-desc">2 - 4 orang</p>
                         </div>
                       </div>
                     );
@@ -267,19 +267,22 @@ const CarList = () => {
                   <p>Update at {item.updatedAt}</p>
                 </div>
                 <div className="div-button">
-                   <button className="button-delete" onClick={() => HandleDelete(item.id)}>
-                      <FiTrash size={18} />
-                      <p className="p-Delete">Delete</p>
-                    </button>
-                    <Link to={`/Editcar/${item.id}`}>
+                  <button
+                    className="button-delete"
+                    onClick={() => HandleDelete(item.id)}
+                  >
+                    <FiTrash size={18} />
+                    <p className="p-Delete">Delete</p>
+                  </button>
+                  <Link to={`/Editcar/${item.id}`}>
                     <button className="button-edit">
-                     <FiEdit size={18}  />
+                      <FiEdit size={18} />
                       <p className="p-Edit">Edit</p>
                     </button>
-                    </Link>
-               </div>
+                  </Link>
+                </div>
               </div>
-          </div>
+            </div>
           ))}
       </div>
     </div>

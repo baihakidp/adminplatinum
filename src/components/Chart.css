@@ -55,3 +55,13 @@
   -ms-border-radius: 0px 2px 2px 0px;
   -o-border-radius: 0px 2px 2px 0px;
 }
+
+.dashboard-title-orderlist {
+  margin-left: 25px;
+}
+
+.dashboard-title-orderlist h1 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 18px;
+}
