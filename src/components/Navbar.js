@@ -1,8 +1,21 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { FiMenu, FiSearch } from "react-icons/fi";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const [Mymail, setMymail] = useState(false)
+
+  useEffect(() => {
+    const email = localStorage.getItem('email')
+
+   if(email) {
+    setMymail(email)
+   }
+   else {
+    setMymail();
+   }
+
+  })
   return (
     <div className="navbar-bg">
       <div className="navbar-container">
@@ -25,7 +38,8 @@ const Navbar = () => {
               <div className="profile-logo">
                 <p>U</p>
               </div>
-              <div className="name-logo">Unis Badri</div>
+             {Mymail ?   <div className="name-logo">{Mymail}</div>
+             : null}
             </div>
           </div>
         </div>

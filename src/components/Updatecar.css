@@ -94,3 +94,35 @@
     height: 36px;
     background-color: white;
 }
+
+.created-at {
+   display: flex;
+   margin-left: 16px;
+   font-size: 14px;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.div-button-add {
+    display: flex;
+    margin-top: 80px;
+    gap: 10px;
+}
+
+.button-cancel {
+   width: 70px;
+   height: 36px;
+   color: #0D28A6;
+   background-color: white;
+   border: 1px solid #0D28A6;
+   cursor: pointer;
+}
+
+.button-save {
+    width: 57px;
+    height: 36px;
+    border-radius: 2px;
+    background-color: #0D28A6;
+    color: white;
+    border: #0D28A6 1px solid;
+    cursor: pointer;
+}
