@@ -5,6 +5,8 @@ const initialState = {
   mediumCar: false,
   largecar: false,
   Mydelete: '',
+  Newcar: {},
+  Edit: {},
 };
 
 export const carReducer = (state = initialState, action) => {
@@ -39,6 +41,18 @@ export const carReducer = (state = initialState, action) => {
       return {
         ...initialState,
         Mydelete: action.payload,
+      }
+
+    case "Post_newcar":
+      return{
+        ...initialState,
+        Newcar: action.payload
+      }
+    
+    case "Edit_Content":
+      return{
+        ...initialState,
+        Edit: action.payload
       }
     default:
       return state;

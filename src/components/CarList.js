@@ -25,9 +25,9 @@ const CarList = () => {
   const Dispatch = useDispatch();
   const {Mydelete} = useSelector((rootReducer) => rootReducer.reduceCar)
 
-  useEffect(() => {
-    Getcar();
-  })
+  // useEffect(() => {
+  //   Getcar();
+  // },[])
 
   useEffect(() => {
    Getcar()
@@ -271,7 +271,7 @@ const CarList = () => {
                       <FiTrash size={18} />
                       <p className="p-Delete">Delete</p>
                     </button>
-                    <Link to={"/Editcar"}>
+                    <Link to={`/Editcar/${item.id}`}>
                     <button className="button-edit">
                      <FiEdit size={18}  />
                       <p className="p-Edit">Edit</p>
