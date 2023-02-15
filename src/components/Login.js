@@ -51,7 +51,7 @@ const Login = () => {
           <img src={BgMobil} alt="background" />
         </div>
         <div className="login-right">
-          <div>
+          <div className="logo-title-container">
             <div className="login-right-logo"></div>
             <div className="login-right-title">
               <h2>Welcome, Admin BCR</h2>
