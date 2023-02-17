@@ -1,21 +1,34 @@
+import { Dropdown } from "antd";
 import { useEffect, useState } from "react";
-import { FiMenu, FiSearch } from "react-icons/fi";
+import { FiChevronDown, FiMenu, FiSearch } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [Mymail, setMymail] = useState(false)
+  const [Mymail, setMymail] = useState(false);
 
   useEffect(() => {
-    const email = localStorage.getItem('email')
+    const email = localStorage.getItem("email");
 
-   if(email) {
-    setMymail(email)
-   }
-   else {
-    setMymail();
-   }
+    if (email) {
+      setMymail(email);
+    } else {
+      setMymail();
+    }
+  });
 
-  })
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.reload(false);
+  };
+
+  const items = [
+    {
+      label: <button onClick={handleLogout}>Logout</button>,
+      key: "0",
+    },
+  ];
+
   return (
     <div className="navbar-bg">
       <div className="navbar-container">
@@ -38,8 +51,12 @@ const Navbar = () => {
               <div className="profile-logo">
                 <p>U</p>
               </div>
-             {Mymail ?   <div className="name-logo">{Mymail}</div>
-             : null}
+              {Mymail ? <div className="name-logo">{Mymail}</div> : null}
+            </div>
+            <div className="dropdown-menu-logout">
+              <Dropdown menu={{ items }} trigger={["click"]}>
+                <FiChevronDown />
+              </Dropdown>
             </div>
           </div>
         </div>

@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { authAction } from "../redux/actions/authAction";
 import "./Login.css";
 import BgMobil from "../assets/BgMobil.png";
+import axios from "axios";
+import { authAction } from "../redux/actions/authAction";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { authReducer } = useSelector((state) => state);
   const [isPassword, setIsPassword] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const handleError = () => {
+    setIsError(true);
+  };
 
   const handlePasswordShow = () => {
     setIsPassword(!isPassword);
@@ -25,13 +32,25 @@ const Login = () => {
     setPassword(e.target.value);
   };
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const payload = {
-      email: email,
-      password: password,
-    };
-    dispatch(authAction(payload));
+  const handleLogin = async (e) => {
+    try {
+      e.preventDefault();
+      const payload = {
+        email: email,
+        password: password,
+      };
+      const result = await axios.post(
+        "https://bootcamp-rent-cars.herokuapp.com/admin/auth/login",
+        payload
+      );
+      localStorage.setItem("token", result.data.access_token);
+      localStorage.setItem("email", result.data.email);
+      dispatch(authAction());
+    } catch (error) {
+      console.log(error.response.data.message);
+      handleError();
+      setErrorMessage(error.response.data.message);
+    }
   };
 
   const handleRedirect = () => {
@@ -57,7 +76,11 @@ const Login = () => {
               <h2>Welcome, Admin BCR</h2>
             </div>
           </div>
-
+          {isError ? (
+            <div className="login-error">
+              <p>{errorMessage}</p>
+            </div>
+          ) : null}
           <div className="login-right-input-bg">
             <div className="login-right-title-input">
               <div className="login-right-input-title">
