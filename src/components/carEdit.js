@@ -5,6 +5,8 @@ import { Editmycar } from "../redux/actions/carAction";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import rootReducer from "../redux/reducers";
+import { useEffect } from "react";
+import axios from "axios";
 
 const CarEdit = () => {
   const [Name, setName] = useState('');
@@ -16,10 +18,33 @@ const CarEdit = () => {
   const navigate = useNavigate('');
   const {Edit} = useSelector((rootReducer) => rootReducer.reduceCar)
 
+  useEffect(() => {
+    Handlerefresh();
+  }, [])
+  
+  useEffect(() => {
+    Handlerefresh();
+  },[Edit])
+
+ const Handlerefresh = () => {
+  const token = localStorage.getItem('token');
+
+  const config = {
+    headers: {
+      access_token: token,
+    }
+  }
+
+  axios
+  .get('https://bootcamp-rent-cars.herokuapp.com/admin/v2/car?name=Innova&page=1&pageSize=10', config)
+  .then((res) => {
+    console.log(res)
+  }).catch((err) => err.message)
+}
+  
   const HandleNama = (e) => {
     setName(e.target.value)
   }
-
   const Handleprice = (e) => {
     setHarga(e.target.value)
   }
@@ -41,7 +66,8 @@ const CarEdit = () => {
 
     Dispatch(Editmycar(id, formdata))
 
-    if(Edit) {
+   
+   if(Edit) {
       navigate('/carlist')
     }
   }
@@ -101,9 +127,9 @@ const CarEdit = () => {
               <label className="label-add">Kategori</label>
               <select className="select-add" onChange={Handlecategori}>
                 <option>Pilih Kategori Mobil</option>
-                <option>2-4 orang</option>
-                <option>4-6 orang</option>
-                <option>6-8 orang</option>
+                <option>small</option>
+                <option>Medium</option>
+                <option>large</option>
               </select>
            </div>
 

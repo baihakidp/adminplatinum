@@ -101,9 +101,9 @@ const Updatecar = () => {
                 <label className="label-add">Kategori</label>
                 <select className="select-add" onChange={Handlecategory}>
                   <option>Pilih Kategori Mobil</option>
-                  <option>2-4 orang</option>
-                  <option>4-6 orang</option>
-                  <option>6-8 orang</option>
+                  <option>small</option>
+                  <option>medium</option>
+                  <option>large</option>
                 </select>
              </div>
 

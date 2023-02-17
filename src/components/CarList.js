@@ -14,6 +14,11 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Deletecars } from "../redux/actions/carAction";
 import rootReducer from "../redux/reducers";
+import 'react-js-dialog-box/dist/index.css';
+import { ReactDialogBox } from 'react-js-dialog-box';
+import "./Dialogbox.css";
+import Beep from "../assets/Beep.png";
+import moment from "moment/moment";
 
 const CarList = () => {
   const [cars, setCars] = useState([]);
@@ -24,6 +29,8 @@ const CarList = () => {
   const navigate = useNavigate();
   const Dispatch = useDispatch();
   const { Mydelete } = useSelector((rootReducer) => rootReducer.reduceCar);
+  const [open, setopen] = useState(false)
+  const [isopen, setisopen] = useState(false)
 
   // useEffect(() => {
   //   Getcar();
@@ -31,6 +38,7 @@ const CarList = () => {
 
   useEffect(() => {
     Getcar();
+    Handlecancel();
   }, [Mydelete]);
 
   const Getcar = () => {
@@ -149,12 +157,28 @@ const CarList = () => {
   };
 
   // handle Delete
+  const [deleteid, setdeleteid] = useState('');
 
   const HandleDelete = (id) => {
-    Dispatch(Deletecars(id));
+    setopen(true)
+    setdeleteid(id)
+    // Dispatch(Deletecars(id))
   };
+  
+  // console.log(Mydelete);
 
-  console.log(Mydelete);
+  // ini untuk dialog box
+  
+  const Handlecancel = () => {
+    setopen(false)
+   }
+
+  const Handleiya = (deleteid) => {
+    Dispatch(Deletecars(deleteid))
+  }
+
+
+
   return (
     <div className="cars-container-bg">
       <div className="cars-breadcrumbs">
@@ -190,17 +214,17 @@ const CarList = () => {
         </button>
         <div>
           <button onClick={handleSmallCategory} className="button-small">
-            small
+            2-4 orang
           </button>
         </div>
         <div>
           <button onClick={handleMediumCategory} className="button-small">
-            medium
+            4-6 orang
           </button>
         </div>
         <div>
           <button onClick={handleLargeCategory} className="button-small">
-            large
+            6-8 orang
           </button>
         </div>
       </div>
@@ -208,6 +232,31 @@ const CarList = () => {
         {!!cars.length &&
           cars.map((item) => (
             <div>
+          {open ?( <>
+          <ReactDialogBox
+           modalWidth='387px'
+           closeButtonColor='white'
+           bodyBackgroundColor='white'
+           bodyTextColor='black'
+           bodyHeight='333px'
+           headerHeight='0px'
+        >
+           <div>
+            <div className="div-dialogbox">
+              <img src={Beep} className="img-Beep"/>
+              <p className="title-dialog">Menghapus Data Mobil</p>
+              <p className="p-dialogbox">
+              Setelah dihapus, data mobil tidak dapat
+              dikembalikan. Yakin ingin menghapus?
+              </p>
+            </div>
+            <div className= "div-buttonbox">
+            <button onClick={() => Handleiya(deleteid)} className="button-iya">Iya</button>
+            <button onClick={Handlecancel} className="button-iya1">tidak</button>
+            </div>
+           </div>
+         </ReactDialogBox>
+         </> ) : null}
               <div className="car-card">
                 <div className="img-car-card">
                   <img src={item.image} alt="gambar" />
@@ -227,7 +276,7 @@ const CarList = () => {
                           <p className="cars-card-category-desc">2 - 4 orang</p>
                         </div>
                       </div>
-                    );
+                    )
                   } else if (item.category === "Medium") {
                     return (
                       <div className="cars-card-category">
@@ -264,7 +313,8 @@ const CarList = () => {
                   }
                 })()}
                 <div>
-                  <p>Update at {item.updatedAt}</p>
+                  <p>{moment(item.updateAt).format("MMM Do YY")}</p>
+                  {/* <p>Update at {item.updatedAt}</p> */}
                 </div>
                 <div className="div-button">
                   <button

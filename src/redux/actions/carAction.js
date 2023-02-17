@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const Deletecars = (id) => (Dispatch) => {
+export const Deletecars = (deleteid) => (Dispatch) => {
     const token = localStorage.getItem('token')
 
     const config = {
@@ -9,7 +9,7 @@ export const Deletecars = (id) => (Dispatch) => {
         }
     }
     axios
-    .delete(`https://bootcamp-rent-cars.herokuapp.com/admin/car/${id}`, config)
+    .delete(`https://bootcamp-rent-cars.herokuapp.com/admin/car/${deleteid}`, config)
     .then((res) => {
         console.log(res.data)
         Dispatch({

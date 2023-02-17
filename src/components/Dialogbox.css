@@ -1,0 +1,57 @@
+.div-dialogbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-Beep {
+    width: 153px;
+    height: 85.67px;
+    margin-top: 50.63px;
+    margin-left: 100px;
+}
+
+.p-dialogbox {
+    font-size: 16px;
+   margin-left: 30px;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.title-dialog {
+    margin-top: 24px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    margin-left: 60px;
+}
+
+.div-buttonbox {
+    display: flex;
+    gap: 16px;
+}
+
+.button-iya {
+    margin-left: 80.5px;
+    width: 87px;
+    height: 36px;
+    border-radius: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    background-color: #0D28A6;
+    border: #0D28A6 1px solid;
+    cursor: pointer;
+}
+
+.button-iya1 {
+    width: 87px;
+    height: 36px;
+    border-radius: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    background-color: #0D28A6;
+    border: #0D28A6 1px solid;
+    cursor: pointer;
+}
