@@ -36,7 +36,7 @@ const CarEdit = () => {
   }
 
   axios
-  .get('https://bootcamp-rent-cars.herokuapp.com/admin/v2/car?name=Innova&page=1&pageSize=10', config)
+  .get('https://bootcamp-rent-cars.herokuapp.com/admin/v2/car?page=1&pageSize=10', config)
   .then((res) => {
     console.log(res)
   }).catch((err) => err.message)

@@ -162,11 +162,8 @@ const CarList = () => {
   const HandleDelete = (id) => {
     setopen(true)
     setdeleteid(id)
-    // Dispatch(Deletecars(id))
   };
   
-  // console.log(Mydelete);
-
   // ini untuk dialog box
   
   const Handlecancel = () => {
@@ -177,9 +174,7 @@ const CarList = () => {
     Dispatch(Deletecars(deleteid))
   }
 
-
-
-  return (
+ return (
     <div className="cars-container-bg">
       <div className="cars-breadcrumbs">
         <div className="div-chevron">
@@ -313,7 +308,7 @@ const CarList = () => {
                   }
                 })()}
                 <div>
-                  <p>{moment(item.updateAt).format("MMM Do YY")}</p>
+                  <p>{moment(item.updateAt).format("Do MMM YY")}</p>
                   {/* <p>Update at {item.updatedAt}</p> */}
                 </div>
                 <div className="div-button">
