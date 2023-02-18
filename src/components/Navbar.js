@@ -73,7 +73,7 @@ const Navbar = () => {
             </div>
             <div className="profile-container">
               <div className="profile-logo">
-                <p>U</p>
+                <p>{Mymail[0]?.toUpperCase() ?? "X"}</p>
               </div>
               {Mymail ? <div className="name-logo">{Mymail}</div> : null}
             </div>
