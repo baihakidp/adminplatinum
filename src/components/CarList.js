@@ -30,11 +30,16 @@ const CarList = () => {
   const Dispatch = useDispatch();
   const { Mydelete } = useSelector((rootReducer) => rootReducer.reduceCar);
   const [open, setopen] = useState(false)
-  const [isopen, setisopen] = useState(false)
+  const [mySearch, setmySearch] = useState(false)
 
+  const {filter} = useSelector((rootReducer) => rootReducer.authReducer);
+  console.log(filter)
   // useEffect(() => {
   //   Getcar();
   // },[])
+  useEffect(() => {
+      setCars(filter);
+  },[filter])
 
   useEffect(() => {
     Getcar();

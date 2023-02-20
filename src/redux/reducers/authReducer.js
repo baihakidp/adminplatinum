@@ -1,5 +1,6 @@
 const initialState = {
   message: false,
+  filter: "",
 };
 
 export const authReducer = (state = initialState, action) => {
@@ -8,7 +9,13 @@ export const authReducer = (state = initialState, action) => {
       return {
         ...initialState,
         message: action.payload,
-      };
+      }; 
+
+    case "Filter_Search":
+       return {
+         ...initialState,
+         filter: action.payload,
+       }
     default:
       return state;
   }

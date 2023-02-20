@@ -2,14 +2,17 @@ import { Dropdown } from "antd";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { FiChevronDown, FiMenu, FiSearch } from "react-icons/fi";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
+import { Searchinput } from "../redux/actions/authAction";
 
 
 const Navbar = () => {
   const [Mymail, setMymail] = useState(false);
   const [Name, setName] = useState('');
   const navigate = useNavigate('');
+  const Dispatch = useDispatch();
 
   useEffect(() => {
     const email = localStorage.getItem("email");
@@ -37,22 +40,10 @@ const Navbar = () => {
     setName(e.target.value)
   }
   
-  const HandlebuttonSearch = () => {
-    const token = localStorage.getItem('token');
-
-    const config = {
-      headers: {
-        access_token: token,
-      }
-    }
-
-    axios
-    .get(`https://bootcamp-rent-cars.herokuapp.com/admin/v2/car?name=${Name}`, config)
-    .then((res) => {
-      console.log(res)
-      navigate('/carlist')
-    })
-  }
+ const HandlebuttonSearch = () => {
+   navigate('/carlist') 
+   Dispatch(Searchinput(Name))
+}
   return (
     <div className="navbar-bg">
       <div className="navbar-container">
